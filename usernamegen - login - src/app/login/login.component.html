@@ -1,0 +1,44 @@
+<hr>
+
+  <img style="width:150px; height:150px;" [src]="propic"/>
+
+<h4>Please select an option:</h4>
+
+<!-- Start Menu -->
+<button (click)="showLogin()" class="btn btn-info">Login</button>
+<div class="divider"></div>
+<button (click)="showSignUp()" class="btn btn-primary">Signup</button>
+
+<!-- Empty space unless user selects a button-->
+<div *ngIf="page=='start'; then noshow else show"></div>
+
+<ng-template #noshow></ng-template><!--start-->
+
+<ng-template #show><!--user selects button-->
+
+    <!--based off user selection-->
+    <div *ngIf="page=='login'; then login else signup"></div>   
+
+    <ng-template #login><br><br>
+        <h5>{{page | uppercase}}</h5>
+            <table>
+                <tr>
+                  <th>Email: <input type="text" [(ngModel)]="email"/> </th>
+                  <th>Password: <input type="password" [(ngModel)]="password"/> </th>
+                </tr>    
+            </table>
+    </ng-template>
+
+
+    <ng-template #signup><br><br>
+        <h5>{{page | uppercase}}</h5>
+            <table>
+                <tr>
+                  <th>Name: <input type="text" [(ngModel)]="name"/> </th>
+                  <th>Email: <input type="text" [(ngModel)]="email"/> </th>
+                  <th>Password: <input type="password" [(ngModel)]="password"/> </th>
+                </tr> 
+            </table>
+    </ng-template>
+</ng-template>
+

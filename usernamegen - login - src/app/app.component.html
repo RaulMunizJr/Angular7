@@ -1,0 +1,35 @@
+
+<h1 style ="color:blue">SimpliLearn</h1>
+<!----------------------------------------------Assignment 1 and 2
+<h3>
+  Welcome to UserName Generator!
+</h3>
+<hr>
+<h4>
+  Fill in the information:
+</h4>
+<table>
+  <tr>
+<th><img style="width:150px; height:150px;" [src]="propic"/></th>
+<th>Name: <input type="text" [(ngModel)]="name"/> </th>
+<th>Email: <input type="text" [(ngModel)]="email"/> </th>
+<th>Password: <input type="password" [(ngModel)]="password"/> </th>
+</tr>
+
+</table>
+
+<button (click)="userGen(name,email,password)" class="btn btn-success">Submit</button><br>
+<p>Username: {{(username)}}</p>
+
+<ul>Usernames currently taken:<hr>
+  <li *ngFor="let ud of users">
+  {{ud}}
+  </li>
+</ul>
+-------------------------------------------------------------------------------------------->
+<h3>
+  Welcome {{yourName}} !
+</h3>
+<input type="text" [(ngModel)]="yourName" placeholder="Enter Name"/>
+<app-login></app-login>
+
