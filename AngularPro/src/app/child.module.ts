@@ -1,0 +1,27 @@
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { HeaderComponent } from "./header.component";
+import { ShoppingListAddComponent } from "./shopping-list/shopping-list-add.component";
+import { ShoppingListComponent } from "./shopping-list/shopping-list.component";
+import { SharedModule } from './shared.module';
+
+import { AppRouting } from './app.routing';
+
+@NgModule({
+  declarations: [
+    HeaderComponent,
+    ShoppingListAddComponent,
+    ShoppingListComponent,
+  ],
+  exports: [
+      HeaderComponent,
+      ShoppingListComponent,
+      ShoppingListAddComponent
+      ],
+  imports: [
+    BrowserModule, SharedModule, AppRouting
+  ],
+  
+})
+export class ChildModule {}

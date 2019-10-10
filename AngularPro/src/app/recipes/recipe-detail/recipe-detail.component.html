@@ -1,0 +1,63 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img src="{{selectedRecipe?.imagePath}}" alt="" class="img-responsive">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{selectedRecipe?.name}}</h1>
+  </div>
+  <div class="col-xs-12">
+    <button class="btn btn-success">To Shopping List</button>
+    <button class="btn btn-primary">Edit</button>
+    <button class="btn btn-danger">Delete</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <p>{{selectedRecipe?.description}}</p>
+    <!--<p>{{selectedRecipe?.offerDate}}</p>-->
+    <!--<p>{{selectedRecipe?.offerExpire | date: 'MM/yy'}}</p>-->
+    <!--<p>{{selectedRecipe?.price | currency: 'EUR'}}</p>-->
+  </div>
+</div>
+<div class="row">
+    <form (ngSubmit)="addRecipe(f)" #f=ngForm>
+    <!--Ingredients-->
+    Ingredient Name: <input type="text" #ingname=ngModel ngModel name="ingname" required minlength="3" class="form-control" style="width:60%">
+    <div *ngIf=ingname.invalid>
+    <div *ngIf=ingname.errors.required style="color:red">
+        Name Can Not be Blank!
+    </div>
+    <div *ngIf=ingname.errors.minlength style="color:red">
+        Name is Incorrect!
+    </div>
+</div>
+    Email: <input type="text" #email=ngModel ngModel name="email" required email class="form-control" style="width:60%">
+<div *ngIf=email.invalid>
+    <div *ngIf=email.errors.required style="color:red">
+        Email Can Not be Blank!
+    </div>
+    <div *ngIf=email.errors.email style="color:red">
+        Email is Incorrect!
+    </div>
+</div>
+    Price: <input type="text" #price=ngModel ngModel name="price" required class="form-control" style="width:60%">
+    <div *ngIf=!price.valid style="color:red">
+        Price Can Not be Blank!
+    </div>
+    Ingredients: <input type="text" #ingredients=ngModel ngModel name="ingredients" required class="form-control" style="width:60%">
+    <div *ngIf=!ingredients.valid style="color:red">
+        Ingredients Can Not be Blank!
+    </div>
+    <br><button type="submit" [disabled]="!f.valid" class="btn btn-success">Submit</button><br>
+  </form>
+  <br>
+  <button (click)="loadRecipies()" class="btn btn-info">Load Recipies</button>
+  <ul><br>
+      <li *ngFor="let ud of loadedPosts">
+         <i><strong> {{ud.ingname | uppercase }}<br>{{ud.email}},<br> {{ud.price | currency}},<br> {{ud.ingredients}}<br><br> </strong></i>
+      </li>
+  </ul>
+</div>

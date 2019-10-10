@@ -1,0 +1,126 @@
+<!-- <form action="/posttasks" method="post">
+  Description:<input type="text" name="description" /> Completed:
+  <input type="text" name="completed" />
+  <br />
+  <button type="submit">Submit</button>
+</form> -->
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+  integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+  crossorigin="anonymous"
+/>
+
+<!-- <form action="/person" method="post">
+  Name:<input type="text" name="name" /> Address:<input
+    type="text"
+    name="address"
+  />
+  Phone:<input type="number" name="phone" /> Email:<input
+    type="text"
+    name="email"
+  />
+  Password:<input type="password" name="password" />
+  <br />
+  <button type="submit">Submit</button>
+</form> -->
+<div class="container">
+  <form action="/person" method="post">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          name="name"
+          id="inputName4"
+          placeholder="Name"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputEmail4">Email</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          id="inputEmail4"
+          placeholder="Email"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPassword4">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          name="password"
+          id="inputPassword4"
+          placeholder="Password"
+        />
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputPhone4">Phone</label>
+        <input
+          type="number"
+          class="form-control"
+          name="phone"
+          id="inputPhone4"
+          placeholder="Phone"
+        />
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputAddress">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        name="address"
+        id="inputAddress"
+        placeholder="1234 Main St"
+      />
+    </div>
+
+    <div class="form-group">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" />
+        <label class="form-check-label" for="gridCheck">
+          Check to Self-Destruct
+        </label>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+
+  <!-- <ul>
+  <% for(var i=0; i< data.length; i++) { %>
+  <li>
+    <span> <%= data[i].name %> </span>
+    <span> <%= data[i].email %> </span>
+  </li>
+  <% } %>
+</ul> -->
+
+  <table class="table table-bordered table-dark">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Address</th>
+        <th scope="col">Phone</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(var i=0; i< data.length; i++) { %>
+      <tr>
+        <th scope="row"><%= i %></th>
+        <td><%= data[i].name %></td>
+        <td><%= data[i].address %></td>
+        <td><%= data[i].phone %></td>
+        <td><%= data[i].email %></td>
+        <td><%= data[i].password %></td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
